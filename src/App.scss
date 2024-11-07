@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=ABeeZee");
+
+$green: #1DB954;
+$black: #141414;
+$lwhite: #f1f0f0;
+$gray: #2c3640;
+$amber: rgb(235, 222, 42);
+$orange: #e7573a;
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'ABeeZee';
+    background-color: $black;
+    color: white;
+    margin-top: 20px;
+    .editorWrapper, .previewerWrapper {
+        box-shadow: 0px 0px 2px 2px $orange;
+        border-radius: 5px;
+        width: 50%;
+        margin: 30px auto;
+        overflow-wrap: break-word;
+        .title-bar {
+            height: 40px;
+            width: 100%;
+            background-color: $green;
+            border: 1px solid $lwhite;
+            border-radius: inherit;
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 18px;
+            img{ height: 25px; width: 25px; padding-right: 10px; cursor: pointer;}
+        }
+        textarea {
+            background-color: $gray;
+            resize: vertical;
+            caret-color: white;
+            color: white;
+            width: 100%;
+            min-height: 200px;
+            font-size: 14px;
+            outline: none;
+            border-radius: inherit;
+            padding: 5px;
+        }
+        .preview {
+            background-color: $gray;
+            width: 100%;
+            min-height: 200px;
+            font-size: 16px;
+            border-radius: inherit;
+            padding: 10px 20px;
+            overflow: hidden;
+            h1, h2{border-bottom: 1px solid white;}
+            h1, h2, h3, h4, h5, h6, p, pre, table, ul, ol{margin-bottom: 25px;}
+            a {color: $amber;}
+            table, td, th {border-collapse: collapse; border: 1px solid white; padding: 5px;}
+            blockquote{border-left: 3px solid $green; color: $amber; padding-left: 5px; margin-left: 25px;}
+            img {height: 500px; width: 100%; object-fit: contain;}
+            p code {background-color: $black;}
+        }
+    }
+    .previewerWrapper {
+        width: 70%;
+    }
+    @media screen and (max-width: 850px) {
+        .previewerWrapper {
+          width: 80%;
+        }
+      
+        .editorWrapper {
+          width: 70%;
+        }
+    }
+    
+    @media screen and (max-width: 650px) {
+        .previewerWrapper {
+          width: 90%;
+        }
+      
+        .editorWrapper {
+          width: 80%;
+        }
+    }
+}
